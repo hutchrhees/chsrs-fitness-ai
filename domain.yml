@@ -1,0 +1,95 @@
+version: "2.0"
+
+intents:
+  - greeting
+  - goodbye
+  - ask_exercise
+  - muscle_soreness
+  - goal_setting
+  - ask_rest
+  - ask_equipment
+  - motivation
+  - health_recovery
+  - exercise_instructions
+  - thank_you
+
+entities:
+  - muscle_group
+  - exercise
+  - goal
+
+slots:
+  muscle_group:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: muscle_group
+  exercise:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: exercise
+  goal:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: goal
+
+responses:
+  utter_greeting:
+    - text: "Hello! I'm here to help you with your fitness journey. What can I assist you with today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Keep up the great work, and see you next time!"
+
+  utter_ask_exercise:
+    - text: "For {muscle_group}, some great exercises are: [list specific exercises]. Need more tips?"
+
+  utter_muscle_soreness:
+    - text: "Soreness is normal after workouts. For {muscle_group}, consider stretching, hydrating, and possibly resting today."
+
+  utter_goal_setting:
+    - condition:
+        - type: slot
+          name: goal
+          value: "fat loss"
+      text: "That's a great goal! For burning fat, I'd recommend a mix of high-intensity cardio and strength training. Would you like a personalized plan?"
+
+    - condition:
+        - type: slot
+          name: goal
+          value: "weight loss"
+      text: "Fantastic! For weight loss, a balanced routine of cardio and resistance exercises works wonders. Shall we dive into the details?"
+
+    - text: "That's a great goal! For {goal}, I'd recommend a mix of strength and endurance exercises. Would you like a plan?"
+
+  utter_ask_rest:
+    - text: "Rest days are essential! Listen to your body, and if you're feeling sore, consider resting today."
+
+  utter_ask_equipment:
+    - text: "For {exercise}, you may need equipment like dumbbells or resistance bands, but modifications are always possible."
+
+  utter_motivation:
+    - text: "You're doing amazing! Remember, every small step brings you closer to your goal. Let’s crush this workout!"
+
+  utter_health_recovery:
+    - text: "For recovery, stay hydrated, consider a balanced meal, and try gentle stretching or foam rolling."
+
+  utter_exercise_instructions:
+    - text: "Here's how to perform {exercise} safely: [provide general tips or steps]. Would you like to know more?"
+
+  utter_thank_you:
+    - text: "You're very welcome! Let me know if there's anything else I can help with."
+
+actions:
+  - action_recommend_exercise
+  - action_handle_soreness
+  - action_suggest_goal_plan
+  - action_give_rest_advice
+  - action_provide_equipment_info
+  - action_provide_recovery_tips
+  - action_exercise_guidance
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

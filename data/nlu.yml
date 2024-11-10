@@ -1,0 +1,139 @@
+version: "2.0"
+nlu:
+  # Greetings
+  - intent: greeting
+    examples: |
+      - hello
+      - hi
+      - hey
+      - good morning
+      - what's up
+      - yo
+
+  # Farewell
+  - intent: goodbye
+    examples: |
+      - goodbye
+      - see you later
+      - bye
+      - catch you later
+      - peace out
+
+  # Asking for Exercise Recommendations
+  - intent: ask_exercise
+    examples: |
+      - What exercises can I do for [chest](muscle_group)?
+      - Suggest exercises for [legs](muscle_group)
+      - What are some good workouts for [arms](muscle_group)?
+      - How can I build my [back](muscle_group)?
+      - I want to strengthen my [core](muscle_group)
+      - Show me exercises for [shoulders](muscle_group)
+      - Recommend something for [abs](muscle_group)
+
+  # Muscle Soreness
+  - intent: muscle_soreness
+    examples: |
+      - My [legs](muscle_group) are sore, should I work out?
+      - I feel sore in my [arms](muscle_group), what should I do?
+      - My [chest](muscle_group) hurts, should I rest?
+      - I'm sore from yesterday, any advice?
+      - What to do if my [back](muscle_group) is sore?
+
+  # Setting Fitness Goals
+  - intent: goal_setting
+    examples: |
+      - I want to build [muscle](goal)
+      - Help me [lose weight](goal)
+      - My goal is to gain [strength](goal)
+      - I want to improve my [endurance](goal)
+      - I need to increase my [flexibility](goal)
+      - I want to tone my body
+      - How can I [bulk up](goal)?
+      - What's a good routine for [weight loss](goal)?
+      - I want to [lose weight](goal)
+      - I am aiming to shed some [pounds](goal)
+      - Can you help me with [weight loss](goal)?
+      - I need to [slim down](goal)
+      - I am trying to get [leaner](goal)
+      - My goal is to [burn fat](goal)
+      - My goal is [weight loss](goal)
+
+  # Asking about Rest Days
+  - intent: ask_rest
+    examples: |
+      - Should I rest today?
+      - Is it okay to take a day off?
+      - Do I need a rest day?
+      - How many rest days should I have?
+      - When should I take a break?
+
+  # Asking about Equipment
+  - intent: ask_equipment
+    examples: |
+      - Do I need equipment for this exercise?
+      - What equipment do I need for [squats](exercise)?
+      - Can I do this workout at home?
+      - Is this bodyweight only?
+      - Can I substitute weights with bands?
+      - Do I need dumbbells for [shoulder press](exercise)?
+
+  # Asking for Motivation
+  - intent: motivation
+    examples: |
+      - Motivate me
+      - I need some encouragement
+      - I'm feeling unmotivated, can you help?
+      - Give me a pep talk
+      - Can you cheer me up?
+      - I need some inspiration to work out
+
+  # General Health and Recovery Advice
+  - intent: health_recovery
+    examples: |
+      - What's the best way to recover from a workout?
+      - How can I reduce soreness?
+      - Any advice for faster recovery?
+      - What should I eat after a workout?
+      - How much water should I drink?
+      - Can you give me some tips on healthy recovery?
+
+  # Specific Exercise Instructions
+  - intent: exercise_instructions
+    examples: |
+      - How do I do a [squat](exercise)?
+      - Can you explain how to do [push-ups](exercise)?
+      - Show me the correct form for [deadlift](exercise)
+      - What's the proper technique for [lunges](exercise)?
+      - Explain [plank](exercise) position
+      - Any tips for doing [pull-ups](exercise)?
+
+  # Thank You
+  - intent: thank_you
+    examples: |
+      - Thanks
+      - Thank you
+      - Appreciate it
+      - That was helpful, thanks
+      - You're the best
+      - Thanks for the advice
+
+  # Synonyms for entities
+  - synonym: weight loss
+    examples: |
+      - get skinny
+      - lose weight
+      - slimming down
+      - weight reduction
+      - burn fat
+      - shedding pounds
+      - slim down
+      - leaner
+      - fat loss
+      - burning fat
+
+  - synonym: muscle gain
+    examples: |
+      - build muscle
+      - muscle growth
+      - bulk up
+      - gaining muscle

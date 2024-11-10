@@ -1,0 +1,84 @@
+version: "2.0"
+stories:
+  # Greeting the user
+  - story: greet user
+    steps:
+      - intent: greeting
+      - action: utter_greeting
+
+  # Saying goodbye to the user
+  - story: say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  # Recommending an exercise based on muscle group
+  - story: recommend exercise
+    steps:
+      - intent: ask_exercise
+      - action: utter_ask_exercise
+      - slot_was_set:
+          - muscle_group: true
+      - action: action_recommend_exercise
+
+  # Handling user muscle soreness
+  - story: handle muscle soreness
+    steps:
+      - intent: muscle_soreness
+      - action: utter_muscle_soreness
+      - slot_was_set:
+          - muscle_group: true
+      - action: action_handle_soreness
+
+  # Setting a fitness goal
+  - story: set fitness goal
+    steps:
+      - intent: goal_setting
+      - action: utter_goal_setting
+      - slot_was_set:
+          - goal: true
+      - action: action_suggest_goal_plan
+
+  # Providing rest day advice
+  - story: provide rest advice
+    steps:
+      - intent: ask_rest
+      - action: utter_ask_rest
+      - action: action_give_rest_advice
+
+  # Giving advice on equipment needed
+  - story: equipment advice
+    steps:
+      - intent: ask_equipment
+      - action: utter_ask_equipment
+      - slot_was_set:
+          - exercise: true
+      - action: action_provide_equipment_info
+
+  # Motivating the user
+  - story: provide motivation
+    steps:
+      - intent: motivation
+      - action: utter_motivation
+
+  # Giving health and recovery advice
+  - story: recovery advice
+    steps:
+      - intent: health_recovery
+      - action: utter_health_recovery
+      - action: action_provide_recovery_tips
+
+  # Providing specific exercise instructions
+  - story: exercise instructions
+    steps:
+      - intent: exercise_instructions
+      - action: utter_exercise_instructions
+      - slot_was_set:
+          - exercise: true
+      - action: action_exercise_guidance
+
+  # Thanking the bot
+  - story: thank the bot
+    steps:
+      - intent: thank_you
+      - action: utter_thank_you

@@ -1,0 +1,34 @@
+# Ignore Rasa model files
+models/
+
+# Ignore Rasa and Flask cache files
+__pycache__/
+*.py[cod]
+.cache/
+.logs/
+
+# Ignore Flask session and cache files
+instance/
+*.db
+*.sqlite3
+
+# Ignore MacOS and system files
+.DS_Store
+*.swp
+
+# Ignore virtual environments and packages
+env/
+venv/
+myenv/
+.venv/
+*.egg-info/
+
+# Ignore any coverage or test reports
+.coverage
+.tox/
+nosetests.xml
+test-results.xml
+
+# Ignore additional IDE/editor settings
+.idea/
+.history/
