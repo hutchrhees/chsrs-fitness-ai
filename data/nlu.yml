@@ -19,6 +19,24 @@ nlu:
       - catch you later
       - peace out
 
+  # Asking for Nutrition Advice
+  - intent: nutrition_advice
+    examples: |
+      - What should I eat after a workout?
+      - Give me some nutrition tips
+      - What's a good post-workout meal?
+      - Can you suggest a healthy snack?
+      - What are good foods for muscle recovery?
+
+  # Asking for Calorie Burn
+  - intent: calorie_burn
+    examples: |
+      - How many calories does [running](activity) burn?
+      - What's the calorie burn for [cycling](activity)?
+      - Calculate calories for [jump rope](activity)
+      - How much energy is used during [swimming](activity)?
+      - Can you estimate calories burned in [yoga](activity)?
+
   # Asking for Exercise Recommendations
   - intent: ask_exercise
     examples: |
@@ -57,6 +75,20 @@ nlu:
       - I am trying to get [leaner](goal)
       - My goal is to [burn fat](goal)
       - My goal is [weight loss](goal)
+
+  # Providing Weight
+  - intent: provide_weight
+    examples: |
+      - My weight is [70](weight) kg
+      - I weigh [75](weight) kilograms
+      - [80](weight) kg
+      - My current weight is [85](weight)
+      - I'm [90](weight) kilograms
+      - [70](weight)
+      - [80](weight)kg
+      - I weigh [90](weight)kg
+      - My weight is [90](weight)kg
+      - [65](weight)
 
   # Asking about Rest Days
   - intent: ask_rest

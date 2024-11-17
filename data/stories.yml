@@ -12,6 +12,49 @@ stories:
       - intent: goodbye
       - action: utter_goodbye
 
+  # Nutrition Advice Story
+  - story: provide nutrition advice
+    steps:
+      - intent: nutrition_advice
+      - action: utter_nutrition_advice
+
+  # Calorie Burn Story (with weight provided)
+  - story: calculate calorie burn with weight
+    steps:
+      - intent: calorie_burn
+        entities:
+          - activity: "running"
+          - weight: 70
+      - slot_was_set:
+          - activity: "running"
+          - weight: 70
+      - action: action_calculate_calorie_burn
+
+  # Calorie Burn Story (Without Weight Provided)
+  - story: calculate calorie burn without weight
+    steps:
+      - intent: calorie_burn
+        entities:
+          - activity: "running"
+      - slot_was_set:
+          - activity: "running"
+      - action: utter_request_weight
+      - intent: provide_weight
+        entities:
+          - weight: 70
+      - slot_was_set:
+          - weight: 70
+      - action: action_calculate_calorie_burn
+
+  # - story: handle calorie burn
+  #   steps:
+  #     - intent: calorie_burn
+  #     - action: action_calculate_calorie_burn
+  #     - slot_was_set:
+  #         - weight: null
+  #     - intent: provide_weight
+  #     - action: action_calculate_calorie_burn
+
   # Recommending an exercise based on muscle group
   - story: recommend exercise
     steps:

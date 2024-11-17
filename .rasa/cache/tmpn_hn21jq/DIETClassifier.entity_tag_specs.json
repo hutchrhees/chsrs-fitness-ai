@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-exercise",
+      "2": "I-exercise",
+      "3": "L-exercise",
+      "4": "U-exercise",
+      "5": "B-goal",
+      "6": "I-goal",
+      "7": "L-goal",
+      "8": "U-goal",
+      "9": "B-muscle_group",
+      "10": "I-muscle_group",
+      "11": "L-muscle_group",
+      "12": "U-muscle_group",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-exercise": 1,
+      "I-exercise": 2,
+      "L-exercise": 3,
+      "U-exercise": 4,
+      "B-goal": 5,
+      "I-goal": 6,
+      "L-goal": 7,
+      "U-goal": 8,
+      "B-muscle_group": 9,
+      "I-muscle_group": 10,
+      "L-muscle_group": 11,
+      "U-muscle_group": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

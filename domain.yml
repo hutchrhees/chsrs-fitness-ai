@@ -3,6 +3,8 @@ version: "2.0"
 intents:
   - greeting
   - goodbye
+  - nutrition_advice
+  - calorie_burn
   - ask_exercise
   - muscle_soreness
   - goal_setting
@@ -12,11 +14,14 @@ intents:
   - health_recovery
   - exercise_instructions
   - thank_you
+  - provide_weight
 
 entities:
+  - activity
   - muscle_group
   - exercise
   - goal
+  - weight
 
 slots:
   muscle_group:
@@ -34,6 +39,15 @@ slots:
     mappings:
       - type: from_entity
         entity: goal
+  activity:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: activity
+  weight:
+    type: float
+    mappings:
+      - type: from_text
 
 responses:
   utter_greeting:
@@ -41,6 +55,12 @@ responses:
 
   utter_goodbye:
     - text: "Goodbye! Keep up the great work, and see you next time!"
+
+  utter_nutrition_advice:
+    - text: "It's important to refuel after a workout. Consider eating lean protein and carbs like chicken breast with sweet potatoes."
+
+  utter_calorie_burn:
+    - text: "For {activity}, the calories burned depend on factors like intensity and duration. Can you provide more details?"
 
   utter_ask_exercise:
     - text: "For {muscle_group}, some great exercises are: [list specific exercises]. Need more tips?"
@@ -81,7 +101,11 @@ responses:
   utter_thank_you:
     - text: "You're very welcome! Let me know if there's anything else I can help with."
 
+  utter_request_weight:
+    - text: "To calculate calories burned accurately, could you please tell me your weight in kilograms?"
+
 actions:
+  - action_calculate_calorie_burn
   - action_recommend_exercise
   - action_handle_soreness
   - action_suggest_goal_plan
